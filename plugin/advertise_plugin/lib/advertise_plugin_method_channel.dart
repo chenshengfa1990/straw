@@ -14,4 +14,9 @@ class MethodChannelAdvertisePlugin extends AdvertisePluginPlatform {
     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
+
+  @override
+  Future<void> startPlayAd() async {
+    return await methodChannel.invokeMethod('startPlayAd');
+  }
 }

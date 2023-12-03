@@ -2,7 +2,7 @@
     package="com.stream.straw">
    <application
         android:label="straw宝"
-        android:name="${applicationName}"
+        android:name=".StrawApplication"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
