@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.stream.straw">
    <application
-        android:label="straw宝"
+        android:label="稻草"
         android:name=".StrawApplication"
         android:icon="@mipmap/ic_launcher">
         <activity
