@@ -1,5 +1,11 @@
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
+
+def STORE_FILE = "${rootDir}/straw.keystore"
+def STORE_PWD = "fa123456"
+def STORE_KEY_ALIAS = "strawalias"
+def STORE_KEY_PWD = "fa123456"
+
 if (localPropertiesFile.exists()) {
     localPropertiesFile.withReader('UTF-8') { reader ->
         localProperties.load(reader)
@@ -56,11 +62,20 @@ android {
         }
     }
 
+    signingConfigs {
+        release {
+            keyAlias STORE_KEY_ALIAS
+            keyPassword STORE_KEY_PWD
+            storeFile file(STORE_FILE)
+            storePassword STORE_PWD
+        }
+    }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
         }
     }
 }
